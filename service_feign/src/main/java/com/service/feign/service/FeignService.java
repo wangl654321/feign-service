@@ -1,6 +1,7 @@
 package com.service.feign.service;
 
 import com.eureka.service.EurekaClientFeign;
+import com.eureka.service.TestEurekaFeign;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,7 +30,14 @@ public class FeignService {
     @Resource
     private EurekaClientFeign eurekaClientFeign;
 
+    @Resource
+    private TestEurekaFeign testEurekaFeign;
+
     public String get(String name) {
         return eurekaClientFeign.getMessageFromClient(name);
+    }
+
+    public String testEureka(String name) {
+        return testEurekaFeign.testEureka(name);
     }
 }

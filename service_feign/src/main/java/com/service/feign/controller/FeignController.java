@@ -35,4 +35,9 @@ public class FeignController {
     public String get(@RequestParam(defaultValue = "sjj", required = false) String name) {
         return feignService.get(name);
     }
+
+    @GetMapping("/testEureka")
+    public String testEureka(@RequestParam(defaultValue = "testEureka", required = false) String name) {
+        return feignService.testEureka(name);
+    }
 }
