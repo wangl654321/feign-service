@@ -1,6 +1,7 @@
 package com.service.feign.controller;
 
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,7 +30,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/getUserList")
+    @GetMapping("/getUserList")
     public ModelMap getUserList() {
         ModelMap modelMap = new ModelMap();
         List<String> userList = new ArrayList<>();
